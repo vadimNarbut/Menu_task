@@ -1,0 +1,356 @@
+/* Стили меню */
+.burger {
+    display: none;
+}
+
+.qwe {
+    opacity: 1;
+    width: 100%;
+    height: 64px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .5);
+    position: relative;
+    z-index: 100000000000;
+}
+
+#nav {
+    display: inline-block;
+    position: absolute;
+    margin: 0px;
+    margin-left: 25%;
+    padding: 0;
+    z-index: 10000000000000;
+    width: 46%;
+    height: 65px;
+}
+
+#nav li {
+    margin: 10px;
+    float: left;
+    position: relative;
+    list-style: none;
+}
+
+#nav li > i {
+    display: none;
+}
+
+#nav a {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 14px 15px 20px;
+}
+
+/* sВыбранный пункт меню */
+#nav>li:hover>a {
+
+    border-bottom: 2px solid #EEB96F;
+}
+
+/* Подуровень */
+#nav ul li:hover a,
+#nav li:hover li a {
+    background: none;
+    border: none;
+    color: #000;
+}
+
+
+/* выпадающий список 
+*/
+#nav>li:hover>ul,
+#nav>li:hover>ul>li>ul {
+    transition: opacity .25s linear;
+    opacity: 1;
+    visibility: visible;
+
+    background: white;
+}
+
+#nav>li:hover>ul {
+
+    margin-top: 0px;
+    margin-left: -131%;
+    height: 250px;
+    position: absolute;
+    width: 715px;
+
+    z-index: 15;
+}
+
+#nav>li:hover>ul>li>ul>li>a {
+    padding: 5px 16px;
+    font-size: 12px;
+}
+
+
+#nav>li:nth-child(4):hover>ul {
+    height: 50px;
+    margin-left: -371%;
+}
+
+#nav ul {
+    opacity: 0;
+    visibility: hidden;
+    padding: 0;
+    position: absolute;
+    transition: visibility .25s linear;
+}
+
+#nav ul li {
+    float: none;
+    margin: 0;
+}
+
+#nav ul a {
+    font-weight: normal;
+    text-shadow: 0 2px 2px rgba(255, 255, 255, 0.7);
+}
+
+#nav li>ul {
+    display: flex;
+}
+
+#nav li>ul>li>ul {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* BACK */
+
+.back {
+    background-color: #000;
+    margin-top: 72px;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+@media(max-width: 1350px) {
+    #nav {
+        font-size: 14px;
+    }
+
+    #nav ul li {
+        float: none;
+        margin: 0;
+        width: 100px;
+    }
+}
+
+@media(max-width: 1250px) {
+    #nav {
+        font-size: 12px;
+    }
+
+    #nav ul li {
+        float: none;
+        margin: 0;
+        width: 100px;
+    }
+
+    #nav a {
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+        display: block;
+        padding: 14px 7px 20px;
+    }
+}
+
+@media(max-width: 1000px) {
+
+    #nav {
+        font-size: 10px;
+    }
+
+
+    #nav a {
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+        display: block;
+        padding: 14px 7px 20px;
+    }
+}
+
+@media(max-width: 900px) {
+    #nav a {
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+        display: block;
+        padding: 14px 0px 20px;
+    }
+}
+
+/* START BURGER MENU  */
+
+@media(max-width: 750px) {
+
+    .qwe {
+        height: auto;
+        background: white;
+        opacity: 0;
+    }
+
+    #nav {
+        display: flex;
+        flex-direction: column;
+        position: unset;
+        margin: 0px;
+        padding: 0;
+        z-index: 1000;
+        width: 100%;
+        height: auto;
+    }
+
+    #nav ul {
+        /* position: relative; */
+    }
+
+    #nav li>ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #nav>li>ul {
+        display: none;
+    }
+
+    #nav>li:hover>ul,
+    #nav>li:hover>ul>li>ul {
+        display: none;
+        transition: none;
+        opacity: none;
+        visibility: none;
+        height: auto;
+        width: auto;
+    }
+
+    #nav>li:hover>ul>li>ul {
+        position: relative;
+    }
+
+    #nav>li:hover>ul {
+
+        margin-top: 0px;
+        margin-left: 0;
+        height: auto;
+        position: unset;
+        width: auto;
+
+        z-index: 15;
+    }
+
+    #nav>li:hover>ul>li>ul>li {
+        margin-top: 0px;
+        margin-left: 0;
+        height: 20px;
+        position: unset;
+        width: 200px;
+
+        z-index: 15;
+    }
+
+    #nav>li:hover>ul>li>ul>li>a {
+        padding: 5px 16px;
+        font-size: 12px;
+    }
+
+    #nav>li:nth-child(4):hover>ul {
+        height: 80px;
+        margin-left: 0;
+    }
+
+
+    ul {
+        list-style: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        padding: 0;
+    }
+
+    #nav li > i {
+        display: block;
+        font-size: 25px;
+        margin-left: 15px;
+        position: absolute;
+        z-index: 10000;
+        top: 3px;
+        margin-left: 90%;
+    }
+
+    a,
+    a:link,
+    a:visited {
+        display: block;
+        text-decoration: none;
+        padding: .25em;
+    }
+
+    a:hover {
+        /* background: silver; */
+    }
+
+    a:only-child:link,
+    a:only-child:visited {
+        color: blue;
+    }
+
+    a:only-child:hover {
+        text-decoration: underline;
+        background: transparent;
+    }
+
+    /* background */
+
+    .back {
+        margin-top: 51px;
+    }
+
+    /* li ul {
+        display: none;
+        margin: 0 .25em;
+    } */
+
+    /* NAV ICON */
+
+    .container {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    .change .bar1 {
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    .change .bar3 {
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+
+}
